@@ -55,13 +55,11 @@ const FindOneAndUpdate = async (data, body, id) => {
 };
 const FindOneAndUpdateByQuerry = async (data, body, query) => {
   try {
-    console.log("findoneandupdatebyquerr");
     const result = await data.findOneAndUpdate(
       query,
       { $set: { ...body } },
       { new: true }
     );
-    console.log(result);
     return result;
   } catch (error) {
     return error;
