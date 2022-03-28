@@ -9,7 +9,6 @@ var cors = require("cors");
 const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
 
-var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/User/users.router");
 var paySlipRouter = require("./routes/payslip/paySlip.router");
 var employeeRouter = require("./routes/employee/employee.router");
@@ -31,7 +30,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
 app.use("/payslip", paySlipRouter);
 app.use("/user", usersRouter);
 app.use("/employee", employeeRouter);
